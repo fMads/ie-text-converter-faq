@@ -12,7 +12,7 @@ function convert(strInput) {
 
     let strText = '';
     arrSections.forEach(strSection => {
-        const arrLines = strSection.split('\n');
+        const arrLines = strSection.replace(/<\/strong>\n/i, '</strong>: ').split('\n');
         const strHeader = arrLines[0];
         const arrContentLines = arrLines.slice(1).map(strLine => strLine.replace(/<\/strong>:\s*/, '</strong>:<br>'));
     
